@@ -4,17 +4,19 @@ import {
   Route,
 } from 'react-router-dom'
 import Home from '../home'
-import About from '../about'
+import Team from '../team'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import * as colors from 'material-ui/styles/colors'
 import './app.css';
+import teams from '../../utils/teams';
 
 export default () => (
     <BrowserRouter>
       <MuiThemeProvider>
         <div className="app">
           <Route exact path="/" component={Home}/>
-          <Route path="/about" component={About}/>
+          {teams.map((v) => (
+            <Route path={`/${v.slug}`} component={Team}/>
+          ))}
         </div>
       </MuiThemeProvider>
     </BrowserRouter>

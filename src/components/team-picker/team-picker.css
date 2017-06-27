@@ -5,4 +5,13 @@
   text-align: center;
   font-family: 'Titillium Web', sans-serif;
   letter-spacing: 2px;
+  margin-bottom: 50px;
+}
+
+.team-picker .shield {
+  display: block;
+  margin: 0 auto;
+  max-width: 40%;
+  margin-bottom: 20px;
+  cursor: pointer;
 }

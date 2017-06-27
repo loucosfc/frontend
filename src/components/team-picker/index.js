@@ -1,9 +1,12 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
-
+import teams from '../../utils/teams';
 import './team-picker.css';
 
 class TeamPicker extends React.Component {
+  handleSelect(team) {
+    this.props.onSelect(team);
+  }
   render() {
     return (
       <div className="team-picker">
@@ -13,9 +16,11 @@ class TeamPicker extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12}>
-            <p>aeae</p>
+          {teams.map((team) => (
+          <Col xs={12} sm={3}>
+            <img src={team.shield} alt={team.nickname} title={team.nickname} onTouchTap={() => this.handleSelect(team)} className="shield" />
           </Col>
+          ))}
         </Row>
       </div>
     )
