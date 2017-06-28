@@ -19,11 +19,11 @@ class Tweet extends React.Component {
               @{retweet.user.screen_name}
             </span>
           </a>
-          <p>{retweet.text}</p>
+          <a className="tweet--text" href={`https://twitter.com/${retweet.user.screen_name}/status/${retweet.id_str}`}>{retweet.text}</a>
           <div className="tweet--stats">
               <span className="tweet--favorites">
                 <AnimatedNumber
-                  value={parseInt(retweet.favorite_count)}
+                  value={parseInt(retweet.favorite_count, 10)}
                   style={{
                       transition: '1.5s ease-out',
                       transitionProperty:
@@ -39,7 +39,7 @@ class Tweet extends React.Component {
               </span>
               <span className="tweet--retweets">
                 <AnimatedNumber
-                  value={parseInt(retweet.retweet_count)}
+                  value={parseInt(retweet.retweet_count, 10)}
                   style={{
                       transition: '1s ease-out',
                       transitionProperty:
@@ -61,7 +61,7 @@ class Tweet extends React.Component {
             }
           </div>
           }
-          <Moment fromNow locale="pt-br" className="tweet--timestamp">{this.props.content.created_at}</Moment>
+          <Moment parse='dd MMM DD HH:mm:ss ZZ YYYY' fromNow locale="pt-br" className="tweet--timestamp">{retweet.created_at}</Moment>
         </Card>
       </div>
     )

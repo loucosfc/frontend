@@ -1,12 +1,14 @@
 import React from 'react';
-import { Grid, Row, Col, } from 'react-flexbox-grid';
+import { Grid, } from 'react-flexbox-grid';
 import Header from '../header';
 import Tweet from '../tweet';
 import { socketConnect } from 'socket.io-react';
 import CircularProgress from 'material-ui/CircularProgress';
-import { CSSTransitionGroup } from 'react-transition-group' ;
+import StackGrid, { transitions } from "react-stack-grid";
 import _ from 'lodash';
 import './team.css';
+
+const { scaleDown } = transitions;
 
 class Team extends React.Component {
   state = {
@@ -62,17 +64,18 @@ class Team extends React.Component {
             </div>
           </div>
         }
-        <CSSTransitionGroup
-        className="row"
-        transitionName="fade-in"
-        transitionEnterTimeout={1500}
-        transitionLeaveTimeout={1300}>
-        {_.orderBy(this.state.tweets, (e) => e.retweeted_status.favorite_count, ['desc']).map((v) => (
-        <Col key={v.id} xs={12} sm={6} md={4}>
-          <Tweet content={v} />
-        </Col>
-        ))}
-        </CSSTransitionGroup>
+          <StackGrid
+            columnWidth={400}
+            appear={scaleDown.appear}
+            appeared={scaleDown.appeared}
+            enter={scaleDown.enter}
+            entered={scaleDown.entered}
+            leaved={scaleDown.leaved}
+          >
+            {_.orderBy(this.state.tweets, (e) => e.retweeted_status.favorite_count, ['desc']).map((v, k) => (
+              <Tweet key={k} content={v} />
+            ))}
+          </StackGrid>
       </Grid>
     )
   };
