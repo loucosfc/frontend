@@ -26,7 +26,7 @@ class Tweet extends React.Component {
           {retweet.entities && retweet.entities.media && retweet.entities.media.length > 0 &&
           <div className="tweet--media">
             {retweet.entities.media[0].type === 'photo' &&
-              <img src={retweet.entities.media[0].media_url} className="tweet--media__photo" />
+              <img src={retweet.entities.media[0].media_url} className="tweet--media__photo" alt="Twitter Media" />
             }
           </div>
           }
