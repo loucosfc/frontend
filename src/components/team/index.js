@@ -2,9 +2,16 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Header from '../header';
 
-export default () => (
-  <Grid className="team">
-    <Header />
-    ae
-  </Grid>
-);
+class Team extends React.Component {
+  render() {
+    return (
+      <Grid className="team">
+        <Header history={this.props.history} />
+        ae
+      </Grid>
+    )
+  };
+}
+
+export default Team;
+

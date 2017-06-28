@@ -15,7 +15,7 @@ class Home extends React.Component {
   render() {
     return (
       <Grid className="home">
-        <Header />
+        <Header history={this.props.history} />
         <TeamPicker
           onSelect={(team) => this.handleSelect(team)}
         />
