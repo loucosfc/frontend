@@ -43,7 +43,7 @@ class App extends React.Component {
           <MuiThemeProvider>
             <div className="app">
               <Route exact path="/" component={Home}/>
-                <Route path="/:teamSlug" render={(props) => <Team maintenanceMode={this.state.maintenanceMode} {...props} />} />
+              <Route onChange={() => alert('saiu')} path="/:teamSlug" render={(props) => <Team maintenanceMode={this.state.maintenanceMode} {...props} />} />
             </div>
           </MuiThemeProvider>
         </SocketProvider>

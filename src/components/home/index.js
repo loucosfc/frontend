@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Grid } from 'react-flexbox-grid';
+import { socketConnect } from 'socket.io-react';
 import TeamPicker from '../team-picker';
 import Header from '../header';
 
@@ -8,6 +9,9 @@ import './home.css';
 
 
 class Home extends React.Component {
+  componentDidMount() {
+    this.props.socket.emit('end:stream');
+  }
   handleSelect = (team) => {
     this.props.history.push(`/${team.slug}`)
   };
@@ -24,4 +28,4 @@ class Home extends React.Component {
   }
 }
 
-export default withRouter(Home);
+export default socketConnect(withRouter(Home));
