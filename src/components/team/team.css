@@ -49,3 +49,18 @@
   width: 100%;
   display: inline-block;
 }
+.tweet--stats {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.tweet--favorites svg {
+  color: #e7a33a !important;
+  position: relative;
+  top: 6px;
+}
+.tweet--retweets svg {
+  color: #e7a33a !important;
+  position: relative;
+  top: 6px;
+}
