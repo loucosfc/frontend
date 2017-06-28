@@ -1,16 +1,12 @@
 import React from 'react';
-import Moment from 'react-moment';
 import { Grid, Row, Col, } from 'react-flexbox-grid';
 import Header from '../header';
+import Tweet from '../tweet';
 import { socketConnect } from 'socket.io-react';
 import CircularProgress from 'material-ui/CircularProgress';
-import FavoriteIcon from 'material-ui/svg-icons/action/favorite-border';
-import RetweetIcon from 'material-ui/svg-icons/av/repeat';
-import { Card } from 'material-ui/Card';
-
+import _ from 'lodash';
 import './team.css';
 
-import 'moment/locale/pt-br';
 
 class Team extends React.Component {
   state = {
@@ -67,24 +63,9 @@ class Team extends React.Component {
           </div>
         }
         <Row>
-          {this.state.tweets.map((v) => (
+          {_.orderBy(this.state.tweets, (e) => e.retweeted_status.favorite_count, ['desc']).map((v) => (
           <Col key={v.id} xs={12} sm={6} md={4}>
-            <div className="tweet">
-              <Card>
-                <a className="tweet--profile-link" href={`https://twitter.com/${v.retweeted_status.user.screen_name}`} rel="noopener noreferrer" target="_blank">
-                  <img src={v.retweeted_status.user.profile_image_url} alt="Twitter" className="tweet--profile-image" />
-                  <span className="tweet--screen-name">
-                    @{v.retweeted_status.user.screen_name}
-                  </span>
-                </a>
-                <p>{v.retweeted_status.text}</p>
-                <div className="tweet--stats">
-                  <span className="tweet--favorites"> {v.retweeted_status.favorite_count} <FavoriteIcon /></span>
-                  <span className="tweet--retweets"> {v.retweeted_status.retweet_count} <RetweetIcon /></span>
-                </div>
-                <Moment fromNow locale="pt-br" className="tweet--timestamp">{v.created_at}</Moment>
-              </Card>
-            </div>
+            <Tweet content={v} />
           </Col>
           ))}
         </Row>
