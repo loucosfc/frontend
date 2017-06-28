@@ -17,7 +17,7 @@ class TeamPicker extends React.Component {
         </Row>
         <Row>
           {teams.map((team) => (
-          <Col xs={12} sm={3}>
+          <Col key={team.nickname} xs={12} sm={3}>
             <img src={team.shield} alt={team.nickname} title={team.nickname} onTouchTap={() => this.handleSelect(team)} className="shield" />
           </Col>
           ))}
