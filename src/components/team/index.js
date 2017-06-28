@@ -7,6 +7,9 @@ import CircularProgress from 'material-ui/CircularProgress';
 import './team.css';
 
 class Team extends React.Component {
+  componentDidMount() {
+    console.log(this.props.match.params.teamSlug);
+  }
   render() {
     return (
       <Grid className="team">

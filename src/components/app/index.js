@@ -1,14 +1,13 @@
-import React from 'react'
+import React from 'react';
 import {
   BrowserRouter,
   Route,
-} from 'react-router-dom'
-import Home from '../home'
-import Team from '../team'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+} from 'react-router-dom';
+import Home from '../home';
+import Team from '../team';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { SocketProvider } from 'socket.io-react';
 import './app.css';
-import teams from '../../utils/teams'
-import { SocketProvider } from 'socket.io-react'
 
 const socket = require('socket.io-client')(process.env.REACT_APP_API_URL);
 
@@ -32,7 +31,6 @@ class App extends React.Component {
   }
 
   setMaintenanceMode(value) {
-    console.log(value);
     this.setState({
       maintenanceMode: value,
     });
@@ -45,9 +43,7 @@ class App extends React.Component {
           <MuiThemeProvider>
             <div className="app">
               <Route exact path="/" component={Home}/>
-              {teams.map((v) => (
-                <Route key={v.slug} path={`/${v.slug}`} component={() => <Team maintenanceMode={this.state.maintenanceMode} />} />
-              ))}
+                <Route path="/:teamSlug" render={(props) => <Team maintenanceMode={this.state.maintenanceMode} {...props} />} />
             </div>
           </MuiThemeProvider>
         </SocketProvider>
