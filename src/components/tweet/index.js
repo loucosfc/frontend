@@ -7,20 +7,29 @@ import 'moment/locale/pt-br';
 
 class Tweet extends React.Component {
   render() {
+    const retweet = this.props.content.retweeted_status;
+
     return (
       <div className="tweet">
         <Card>
-          <a className="tweet--profile-link" href={`https://twitter.com/${this.props.content.retweeted_status.user.screen_name}`} rel="noopener noreferrer" target="_blank">
-            <img src={this.props.content.retweeted_status.user.profile_image_url} alt="Twitter" className="tweet--profile-image" />
+          <a className="tweet--profile-link" href={`https://twitter.com/${retweet.user.screen_name}`} rel="noopener noreferrer" target="_blank">
+            <img src={retweet.user.profile_image_url} alt="Twitter" className="tweet--profile-image" />
             <span className="tweet--screen-name">
-              @{this.props.content.retweeted_status.user.screen_name}
+              @{retweet.user.screen_name}
             </span>
           </a>
-          <p>{this.props.content.retweeted_status.text}</p>
+          <p>{retweet.text}</p>
           <div className="tweet--stats">
-            <span className="tweet--favorites"> {this.props.content.retweeted_status.favorite_count} <FavoriteIcon /></span>
-            <span className="tweet--retweets"> {this.props.content.retweeted_status.retweet_count} <RetweetIcon /></span>
+            <span className="tweet--favorites"> {retweet.favorite_count} <FavoriteIcon /></span>
+            <span className="tweet--retweets"> {retweet.retweet_count} <RetweetIcon /></span>
           </div>
+          {retweet.entities && retweet.entities.media && retweet.entities.media.length > 0 &&
+          <div className="tweet--media">
+            {retweet.entities.media[0].type === 'photo' &&
+              <img src={retweet.entities.media[0].media_url} className="tweet--media__photo" />
+            }
+          </div>
+          }
           <Moment fromNow locale="pt-br" className="tweet--timestamp">{this.props.content.created_at}</Moment>
         </Card>
       </div>

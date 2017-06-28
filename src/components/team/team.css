@@ -64,3 +64,7 @@
   position: relative;
   top: 6px;
 }
+.tweet--media__photo {
+  max-width: 100%;
+  margin-top: 10px;
+}
