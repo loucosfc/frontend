@@ -51,8 +51,11 @@
 }
 .tweet--stats {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
+}
+.tweet--favorites {
+  margin-right: 20px;
 }
 .tweet--favorites svg {
   color: #e7a33a !important;

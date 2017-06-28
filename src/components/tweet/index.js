@@ -3,6 +3,7 @@ import Moment from 'react-moment';
 import FavoriteIcon from 'material-ui/svg-icons/action/favorite-border';
 import RetweetIcon from 'material-ui/svg-icons/av/repeat';
 import { Card } from 'material-ui/Card';
+import AnimatedNumber from 'react-animated-number';
 import 'moment/locale/pt-br';
 
 class Tweet extends React.Component {
@@ -20,8 +21,38 @@ class Tweet extends React.Component {
           </a>
           <p>{retweet.text}</p>
           <div className="tweet--stats">
-              <span className="tweet--favorites"> {retweet.favorite_count} <FavoriteIcon /></span>
-              <span className="tweet--retweets"> {retweet.retweet_count} <RetweetIcon /></span>
+              <span className="tweet--favorites">
+                <AnimatedNumber
+                  value={parseInt(retweet.favorite_count)}
+                  style={{
+                      transition: '1.5s ease-out',
+                      transitionProperty:
+                          'background-color, color, opacity'
+                  }}
+                  frameStyle={perc => (
+                      perc === 100 ? {} : {color: '#e7a33a'}
+                  )}
+                  stepPrecision={0}
+                  duration={1500}
+                />
+                <FavoriteIcon />
+              </span>
+              <span className="tweet--retweets">
+                <AnimatedNumber
+                  value={parseInt(retweet.retweet_count)}
+                  style={{
+                      transition: '1s ease-out',
+                      transitionProperty:
+                          'background-color, color, opacity'
+                  }}
+                  frameStyle={perc => (
+                      perc === 100 ? {} : {color: '#e7a33a'}
+                  )}
+                  stepPrecision={0}
+                  duration={1500}
+                />
+                <RetweetIcon />
+              </span>
           </div>
           {retweet.entities && retweet.entities.media && retweet.entities.media.length > 0 &&
           <div className="tweet--media">
