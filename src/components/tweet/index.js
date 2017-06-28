@@ -20,8 +20,8 @@ class Tweet extends React.Component {
           </a>
           <p>{retweet.text}</p>
           <div className="tweet--stats">
-            <span className="tweet--favorites"> {retweet.favorite_count} <FavoriteIcon /></span>
-            <span className="tweet--retweets"> {retweet.retweet_count} <RetweetIcon /></span>
+              <span className="tweet--favorites"> {retweet.favorite_count} <FavoriteIcon /></span>
+              <span className="tweet--retweets"> {retweet.retweet_count} <RetweetIcon /></span>
           </div>
           {retweet.entities && retweet.entities.media && retweet.entities.media.length > 0 &&
           <div className="tweet--media">

@@ -4,9 +4,9 @@ import Header from '../header';
 import Tweet from '../tweet';
 import { socketConnect } from 'socket.io-react';
 import CircularProgress from 'material-ui/CircularProgress';
+import { CSSTransitionGroup } from 'react-transition-group' ;
 import _ from 'lodash';
 import './team.css';
-
 
 class Team extends React.Component {
   state = {
@@ -62,13 +62,17 @@ class Team extends React.Component {
             </div>
           </div>
         }
-        <Row>
-          {_.orderBy(this.state.tweets, (e) => e.retweeted_status.favorite_count, ['desc']).map((v) => (
-          <Col key={v.id} xs={12} sm={6} md={4}>
-            <Tweet content={v} />
-          </Col>
-          ))}
-        </Row>
+        <CSSTransitionGroup
+        className="row"
+        transitionName="fade-in"
+        transitionEnterTimeout={1500}
+        transitionLeaveTimeout={1300}>
+        {_.orderBy(this.state.tweets, (e) => e.retweeted_status.favorite_count, ['desc']).map((v) => (
+        <Col key={v.id} xs={12} sm={6} md={4}>
+          <Tweet content={v} />
+        </Col>
+        ))}
+        </CSSTransitionGroup>
       </Grid>
     )
   };
