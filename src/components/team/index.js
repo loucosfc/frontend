@@ -4,9 +4,11 @@ import Header from '../header';
 import Tweet from '../tweet';
 import { socketConnect } from 'socket.io-react';
 import CircularProgress from 'material-ui/CircularProgress';
+import StackGrid, { transitions } from 'react-stack-grid';
 import _ from 'lodash';
-import Masonry from 'react-masonry-component';
 import './team.css';
+
+const { scaleDown } = transitions;
 
 class Team extends React.Component {
   state = {
@@ -62,16 +64,18 @@ class Team extends React.Component {
             </div>
           </div>
         }
-        <Masonry
-          options={{percentPosition: true, horizontalOrder: true,}}
-          className={'masonry-tweets'}
-          disableImagesLoaded={false} // default false
-          updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+        <StackGrid
+          columnWidth={400}
+          appear={scaleDown.appear}
+          appeared={scaleDown.appeared}
+          enter={scaleDown.enter}
+          entered={scaleDown.entered}
+          leaved={scaleDown.leaved}
         >
           {_.orderBy(this.state.tweets, (e) => e.retweeted_status.favorite_count, ['desc']).map((v, k) => (
-            <Tweet key={k} position={k} content={v} />
+            <Tweet key={k} content={v} />
           ))}
-        </Masonry>
+        </StackGrid>
       </Grid>
     )
   };
