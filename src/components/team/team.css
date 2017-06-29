@@ -19,7 +19,11 @@
   padding: 10px;
 }
 .tweet {
-  margin: 10px;
+  margin: 1%;
+  width: 8%;
+}
+.tweet--large {
+  width: 30%;
 }
 .tweet--text {
   word-break: break-word;
