@@ -2,11 +2,10 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Grid } from 'react-flexbox-grid';
 import { socketConnect } from 'socket.io-react';
-import TeamPicker from '../team-picker';
-import Header from '../header';
+import TeamList from './components/TeamList';
+import Header from 'components/Header';
 
-import './home.css';
-
+import './stylesheet.css';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -20,7 +19,7 @@ class Home extends React.Component {
     return (
       <Grid fluid className="home">
         <Header history={this.props.history} />
-        <TeamPicker
+        <TeamList
           onSelect={(team) => this.handleSelect(team)}
         />
       </Grid>
