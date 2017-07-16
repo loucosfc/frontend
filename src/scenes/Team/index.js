@@ -6,6 +6,7 @@ import StackGrid, { transitions } from 'react-stack-grid';
 import _ from 'lodash';
 import Header from 'components/Header';
 import Tweet from './components/Tweet';
+import ButtonBack from './components/ButtonBack';
 
 import './stylesheet.css';
 
@@ -58,6 +59,7 @@ class TeamScene extends React.Component {
     return (
       <Grid fluid className="team">
         <Header history={this.props.history} />
+        <ButtonBack history={this.props.history} />
         {this.props.maintenanceMode &&
           <div className="maintenance-mode">
             <div className="progress">
