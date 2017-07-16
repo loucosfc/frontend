@@ -1,16 +1,17 @@
 import React from 'react';
 import { Grid, } from 'react-flexbox-grid';
-import Header from '../header';
-import Tweet from '../tweet';
 import { socketConnect } from 'socket.io-react';
 import CircularProgress from 'material-ui/CircularProgress';
 import StackGrid, { transitions } from 'react-stack-grid';
 import _ from 'lodash';
-import './team.css';
+import Header from 'components/Header';
+import Tweet from './components/Tweet';
+
+import './stylesheet.css';
 
 const { scaleDown } = transitions;
 
-class Team extends React.Component {
+class TeamScene extends React.Component {
   state = {
     tweets: [],
   };
@@ -81,5 +82,4 @@ class Team extends React.Component {
   };
 }
 
-export default socketConnect(Team);
-
+export default socketConnect(TeamScene);

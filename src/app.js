@@ -3,13 +3,15 @@ import {
   BrowserRouter,
   Route,
 } from 'react-router-dom';
-import Home from '../home';
-import Team from '../team';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { SocketProvider } from 'socket.io-react';
-import './app.css';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-const socket = require('socket.io-client')(process.env.REACT_APP_API_URL);
+import HomeScene from './scenes/Home';
+import TeamScene from './scenes/Team';
+
+import webSocketService from './services/websocket';
+
+import './stylesheet.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,11 +23,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    socket.on('connect', () => {
+    webSocketService.getSocket().on('connect', () => {
       this.setMaintenanceMode(false);
     });
 
-    socket.on('disconnect', () => {
+    webSocketService.getSocket().on('disconnect', () => {
       this.setMaintenanceMode(true);
     });
   }
@@ -39,11 +41,11 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <SocketProvider socket={socket}>
+        <SocketProvider socket={webSocketService.getSocket()}>
           <MuiThemeProvider>
             <div className="app">
-              <Route exact path="/" component={Home}/>
-              <Route onChange={() => alert('saiu')} path="/:teamSlug" render={(props) => <Team maintenanceMode={this.state.maintenanceMode} {...props} />} />
+              <Route exact path="/" component={HomeScene}/>
+              <Route path="/:teamSlug" render={(props) => <TeamScene maintenanceMode={this.state.maintenanceMode} {...props} />} />
             </div>
           </MuiThemeProvider>
         </SocketProvider>

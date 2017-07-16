@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from '../../assets/logo.png';
+import logo from './assets/logo.png';
 import { Row, Col } from 'react-flexbox-grid';
 
-import './header.css';
+import './stylesheet.css';
 
 class Header extends React.Component {
   handleLogoOnTouchTap = () => {
