@@ -17,7 +17,6 @@
     "react-masonry-component": "^5.0.7",
     "react-moment": "^0.2.4",
     "react-router-dom": "^4.1.1",
-    "react-stack-grid": "^0.2.2",
     "react-tap-event-plugin": "^2.0.1",
     "react-transition-group": "^1.2.0",
     "socket.io-client": "^2.0.3",

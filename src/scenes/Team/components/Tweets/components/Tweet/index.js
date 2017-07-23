@@ -6,12 +6,14 @@ import { Card } from 'material-ui/Card';
 import AnimatedNumber from 'react-animated-number';
 import 'moment/locale/pt-br';
 
+import './stylesheet.css';
+
 class Tweet extends React.Component {
   render() {
     const retweet = this.props.content.retweeted_status;
 
     return (
-      <div className={`tweet ${this.props.position < 3 ? 'tweet--large' : ''}`}>
+      <div className={'tweet'}>
         <Card>
           <a className="tweet--profile-link" href={`https://twitter.com/${retweet.user.screen_name}`} rel="noopener noreferrer" target="_blank">
             <img src={retweet.user.profile_image_url} alt="Twitter" className="tweet--profile-image" />
