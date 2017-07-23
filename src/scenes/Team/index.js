@@ -1,16 +1,11 @@
 import React from 'react';
 import { Grid, } from 'react-flexbox-grid';
 import { socketConnect } from 'socket.io-react';
-import CircularProgress from 'material-ui/CircularProgress';
-import StackGrid, { transitions } from 'react-stack-grid';
-import _ from 'lodash';
 import Header from 'components/Header';
-import Tweet from './components/Tweet';
+import Tweets from './components/Tweets';
 import ButtonBack from './components/ButtonBack';
-
+import MaintenanceMode from './components/MaintenanceMode';
 import './stylesheet.css';
-
-const { scaleDown } = transitions;
 
 class TeamScene extends React.Component {
   state = {
@@ -60,25 +55,8 @@ class TeamScene extends React.Component {
       <Grid fluid className="team">
         <Header history={this.props.history} />
         <ButtonBack history={this.props.history} />
-        {this.props.maintenanceMode &&
-          <div className="maintenance-mode">
-            <div className="progress">
-              <CircularProgress color="#e7a33a" size={256} thickness={5} />
-            </div>
-          </div>
-        }
-        <StackGrid
-          columnWidth={400}
-          appear={scaleDown.appear}
-          appeared={scaleDown.appeared}
-          enter={scaleDown.enter}
-          entered={scaleDown.entered}
-          leaved={scaleDown.leaved}
-        >
-          {_.orderBy(this.state.tweets, (e) => e.retweeted_status.favorite_count, ['desc']).map((v, k) => (
-            <Tweet key={k} content={v} />
-          ))}
-        </StackGrid>
+        <MaintenanceMode enabled={this.props.maintenanceMode} />
+        <Tweets tweets={this.state.tweets} />
       </Grid>
     )
   };

@@ -4,14 +4,36 @@ import FavoriteIcon from 'material-ui/svg-icons/action/favorite-border';
 import RetweetIcon from 'material-ui/svg-icons/av/repeat';
 import { Card } from 'material-ui/Card';
 import AnimatedNumber from 'react-animated-number';
+import CameraIcon from 'material-ui/svg-icons/image/photo-camera';
 import 'moment/locale/pt-br';
 
+import './stylesheet.css';
+
 class Tweet extends React.Component {
+  getClassNames() {
+    const classNames = ['tweet'];
+
+    switch(this.props.index) {
+      case 0:
+        classNames.push('tweet--first');
+      break;
+      case 1:
+        classNames.push('tweet--second');
+      break;
+      case 2:
+        classNames.push('tweet--third');
+      break;
+      default:
+      break;
+    }
+
+    return classNames.join(' ');
+  }
   render() {
     const retweet = this.props.content.retweeted_status;
 
     return (
-      <div className={`tweet ${this.props.position < 3 ? 'tweet--large' : ''}`}>
+      <div className={this.getClassNames()}>
         <Card>
           <a className="tweet--profile-link" href={`https://twitter.com/${retweet.user.screen_name}`} rel="noopener noreferrer" target="_blank">
             <img src={retweet.user.profile_image_url} alt="Twitter" className="tweet--profile-image" />
@@ -57,7 +79,17 @@ class Tweet extends React.Component {
           {retweet.entities && retweet.entities.media && retweet.entities.media.length > 0 &&
           <div className="tweet--media">
             {retweet.entities.media[0].type === 'photo' &&
-              <img src={retweet.entities.media[0].media_url} className="tweet--media__photo" alt="Twitter Media" />
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={retweet.entities.media[0].media_url}
+                className="tweet--media__photo"
+                style={{
+                  background: `url(${retweet.entities.media[0].media_url})`,
+                }}
+              >
+                <span><CameraIcon /></span>
+              </a>
             }
           </div>
           }
