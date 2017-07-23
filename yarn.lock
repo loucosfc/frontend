@@ -1186,7 +1186,7 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bowser@^1.0.0, bowser@^1.6.0:
+bowser@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.7.0.tgz#169de4018711f994242bff9a8009e77a1f35e003"
 
@@ -1463,9 +1463,9 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-classnames@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+classie@eiriklv/classie:
+  version "1.0.1"
+  resolved "https://codeload.github.com/eiriklv/classie/tar.gz/da1d3019904433872a8656d3cd69fc41d69c477a"
 
 clean-css@4.1.x:
   version "4.1.4"
@@ -1984,6 +1984,10 @@ des.js@^1.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
 
+desandro-get-style-property@eiriklv/get-style-property:
+  version "1.0.4"
+  resolved "https://codeload.github.com/eiriklv/get-style-property/tar.gz/a5a74ad48d96c7d5ddcf652e9fa5d4283af37823"
+
 desandro-matches-selector@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/desandro-matches-selector/-/desandro-matches-selector-2.0.2.tgz#717beed4dc13e7d8f3762f707a6d58a6774218e1"
@@ -2013,6 +2017,12 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
+
+doc-ready@eiriklv/doc-ready:
+  version "1.0.3"
+  resolved "https://codeload.github.com/eiriklv/doc-ready/tar.gz/31c2481101af5dab33311fea4c7fc684b58fa8ad"
+  dependencies:
+    eventie eiriklv/eventie
 
 doctrine@1.5.0:
   version "1.5.0"
@@ -2106,12 +2116,6 @@ duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
 
-easy-css-transform-builder@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/easy-css-transform-builder/-/easy-css-transform-builder-0.0.2.tgz#a541667a7919e17f67d82b11d3cb55fdd5433022"
-  dependencies:
-    invariant "^2.2.2"
-
 ecc-jsbn@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
@@ -2126,7 +2130,7 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.14:
   version "1.3.14"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.14.tgz#64af0f9efd3c3c6acd57d71f83b49ca7ee9c4b43"
 
-element-resize-detector@^1.1.12, element-resize-detector@^1.1.9:
+element-resize-detector@^1.1.9:
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.12.tgz#8b3fd6eedda17f9c00b360a0ea2df9927ae80ba2"
   dependencies:
@@ -2491,6 +2495,18 @@ eventemitter3@1.x.x:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
 
+eventemitter@braznaavtrav/EventEmitter:
+  version "4.2.0"
+  resolved "https://codeload.github.com/braznaavtrav/EventEmitter/tar.gz/7169056a2f8b3b55d78ab1b85bad39277e7e88b2"
+
+"eventie@>=1.0.4 <2":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/eventie/-/eventie-1.0.6.tgz#d4ffc8b0c2b5e493c2aa1b22cbe918d3aee74437"
+
+eventie@eiriklv/eventie:
+  version "1.0.5"
+  resolved "https://codeload.github.com/eiriklv/eventie/tar.gz/c9d290c6aa57712257dc8c0b6bf21c9374190a3c"
+
 events@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
@@ -2512,10 +2528,6 @@ exec-sh@^0.2.0:
   resolved "https://registry.yarnpkg.com/exec-sh/-/exec-sh-0.2.0.tgz#14f75de3f20d286ef933099b2ce50a90359cef10"
   dependencies:
     merge "^1.1.3"
-
-exenv@^1.2.1:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
 
 exit-hook@^1.0.0:
   version "1.1.1"
@@ -2871,6 +2883,12 @@ get-size@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/get-size/-/get-size-2.0.2.tgz#555ea98ab8732e0c021e9e23e2219adcbe398e98"
 
+get-size@eiriklv/get-size:
+  version "1.1.8"
+  resolved "https://codeload.github.com/eiriklv/get-size/tar.gz/c1ebd019815fc6247c094c17a41b61d0e8191b08"
+  dependencies:
+    desandro-get-style-property eiriklv/get-style-property
+
 get-stdin@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
@@ -3184,7 +3202,7 @@ https-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
 
-hyphenate-style-name@^1.0.1, hyphenate-style-name@^1.0.2:
+hyphenate-style-name@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
 
@@ -3208,11 +3226,18 @@ ignore@^3.2.0:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.3.tgz#432352e57accd87ab3110e82d3fea0e47812156d"
 
-imagesloaded@^4.0.0, imagesloaded@^4.1.1:
+imagesloaded@^4.0.0:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/imagesloaded/-/imagesloaded-4.1.3.tgz#94b82a069e532c9da112a4ea3960e58424a42be4"
   dependencies:
     ev-emitter "^1.0.0"
+
+"imagesloaded@git+https://github.com/eiriklv/imagesloaded":
+  version "3.1.8"
+  resolved "git+https://github.com/eiriklv/imagesloaded#04535a148206e58790927e133f24ca199163b995"
+  dependencies:
+    eventie ">=1.0.4 <2"
+    wolfy87-eventemitter "4.x"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -3250,13 +3275,6 @@ inherits@2.0.1:
 ini@~1.3.0:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
-
-inline-style-prefixer@^2.0.4:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/inline-style-prefixer/-/inline-style-prefixer-2.0.5.tgz#c153c7e88fd84fef5c602e95a8168b2770671fe7"
-  dependencies:
-    bowser "^1.0.0"
-    hyphenate-style-name "^1.0.1"
 
 inline-style-prefixer@^3.0.2:
   version "3.0.6"
@@ -4076,10 +4094,6 @@ lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
 
-lodash.isequal@^4.0.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
-
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -4169,6 +4183,10 @@ masonry-layout@^4.2.0:
   dependencies:
     get-size "^2.0.2"
     outlayer "^2.1.0"
+
+matches-selector@desandro/matches-selector#v1.0.3:
+  version "1.0.3"
+  resolved "https://codeload.github.com/desandro/matches-selector/tar.gz/082376f4bbe7ff8c5c6bb258ec43259c9a80a7c3"
 
 material-ui@^0.18.4:
   version "0.18.4"
@@ -4624,6 +4642,17 @@ outlayer@^2.1.0:
     fizzy-ui-utils "^2.0.0"
     get-size "^2.0.2"
 
+outlayer@eiriklv/outlayer:
+  version "1.2.0"
+  resolved "https://codeload.github.com/eiriklv/outlayer/tar.gz/aea1c8239d30ccc1d3664ca3fff2f6d4b20fb812"
+  dependencies:
+    desandro-get-style-property eiriklv/get-style-property
+    doc-ready eiriklv/doc-ready
+    eventemitter braznaavtrav/EventEmitter
+    eventie eiriklv/eventie
+    get-size eiriklv/get-size
+    matches-selector desandro/matches-selector#v1.0.3
+
 p-limit@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-1.1.0.tgz#b07ff2d9a5d88bec806035895a2bab66a27988bc"
@@ -4646,6 +4675,15 @@ package-json@^2.0.0:
     registry-auth-token "^3.0.1"
     registry-url "^3.0.3"
     semver "^5.1.0"
+
+"packery@git+https://github.com/eiriklv/packery":
+  version "1.3.0"
+  resolved "git+https://github.com/eiriklv/packery#8e812a0a16575ef923f5e72efcea85aadc6fea67"
+  dependencies:
+    classie eiriklv/classie
+    desandro-get-style-property eiriklv/get-style-property
+    get-size eiriklv/get-size
+    outlayer eiriklv/outlayer
 
 pako@~0.2.0:
   version "0.2.9"
@@ -5293,12 +5331,6 @@ react-dom@^15.6.1:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react-draggable@^2.2.6:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/react-draggable/-/react-draggable-2.2.6.tgz#3a806e10f2da6babfea4136be6510e89b0d76901"
-  dependencies:
-    classnames "^2.2.5"
-
 react-error-overlay@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-1.0.7.tgz#8712fe40cfc194ce992a4136c091c03bfada9148"
@@ -5325,16 +5357,6 @@ react-flexbox-grid@^1.1.3:
   dependencies:
     flexboxgrid "^6.3.0"
     prop-types "^15.5.8"
-
-react-grid-layout@^0.14.7:
-  version "0.14.7"
-  resolved "https://registry.yarnpkg.com/react-grid-layout/-/react-grid-layout-0.14.7.tgz#aaa0d090007a4d482d39a95bd63c8ef12901eab4"
-  dependencies:
-    classnames "^2.2.5"
-    lodash.isequal "^4.0.0"
-    prop-types "^15.5.8"
-    react-draggable "^2.2.6"
-    react-resizable "^1.4.0"
 
 react-hot-loader@next:
   version "3.0.0-beta.7"
@@ -5364,18 +5386,18 @@ react-moment@^0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.2.4.tgz#b27ec064b8d6c329660afa14af6dbb47ff0ef799"
 
+react-packery-component@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-packery-component/-/react-packery-component-1.0.2.tgz#1521221da49167cb3cedf47d5b552c33488180a9"
+  dependencies:
+    imagesloaded eiriklv/imagesloaded
+    packery eiriklv/packery
+
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
   dependencies:
     lodash "^4.6.1"
-
-react-resizable@^1.4.0:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/react-resizable/-/react-resizable-1.7.1.tgz#e8fd2c2247c9299d117fb245dbeed9c68c0e004c"
-  dependencies:
-    prop-types "^15.5.8"
-    react-draggable "^2.2.6"
 
 react-router-dom@^4.1.1:
   version "4.1.1"
@@ -5398,35 +5420,13 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-sizeme@^2.2.0:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/react-sizeme/-/react-sizeme-2.3.4.tgz#dd662ff43d65e7bd37992a2bb86e7d7df8a67836"
-  dependencies:
-    element-resize-detector "^1.1.12"
-    invariant "^2.2.2"
-    lodash "^4.17.4"
-
-react-stack-grid@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/react-stack-grid/-/react-stack-grid-0.2.2.tgz#a9f0ba846bb7ffa5dc6464a36b75006e900ca785"
-  dependencies:
-    easy-css-transform-builder "^0.0.2"
-    exenv "^1.2.1"
-    imagesloaded "^4.1.1"
-    inline-style-prefixer "^2.0.4"
-    invariant "^2.2.2"
-    prop-types "^15.5.10"
-    react-sizeme "^2.2.0"
-    react-transition-group "^1.1.3"
-    shallowequal "^1.0.1"
-
 react-tap-event-plugin@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-tap-event-plugin/-/react-tap-event-plugin-2.0.1.tgz#316beb3bc6556e29ec869a7293e89c826a9074d2"
   dependencies:
     fbjs "^0.8.6"
 
-react-transition-group@^1.1.2, react-transition-group@^1.1.3, react-transition-group@^1.2.0:
+react-transition-group@^1.1.2, react-transition-group@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-1.2.0.tgz#b51fc921b0c3835a7ef7c571c79fc82c73e9204f"
   dependencies:
@@ -5884,10 +5884,6 @@ sha.js@^2.4.0, sha.js@^2.4.8:
   resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.4.8.tgz#37068c2c476b6baf402d14a49c67f597921f634f"
   dependencies:
     inherits "^2.0.1"
-
-shallowequal@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.0.1.tgz#4349160418200bad3b82d723ded65f2354db2a23"
 
 shell-quote@1.6.1:
   version "1.6.1"
@@ -6760,6 +6756,10 @@ widest-line@^1.0.0:
 window-size@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"
+
+wolfy87-eventemitter@4.x:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/wolfy87-eventemitter/-/wolfy87-eventemitter-4.3.0.tgz#6497396c95e74359f06b6e35409339318d8d964f"
 
 wordwrap@0.0.2, wordwrap@~0.0.2:
   version "0.0.2"

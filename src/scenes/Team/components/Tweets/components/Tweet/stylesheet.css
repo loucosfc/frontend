@@ -1,3 +1,101 @@
 .tweet {
-  width: 30%;
+  width: 25%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.tweet--first {
+  width: 33.3%;
+  height: 400px;
+}
+.tweet--first .tweet--media__photo {
+  height: 200px;
+}
+.tweet--second {
+  width: 33.3%;
+  height: 400px;
+}
+.tweet--second .tweet--media__photo {
+  height: 200px;
+}
+.tweet--third {
+  width: 33.3%;
+  height: 400px;
+}
+.tweet--third .tweet--media__photo {
+  height: 200px;
+}
+.tweet > div {
+  padding: 10px;
+}
+.tweet--text {
+  word-break: break-word;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+  color: #051931;
+  text-decoration: none;
+  display: block;
+}
+.tweet--profile-link {
+  font-weight: bold;
+  color: #051931;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.tweet--profile-image {
+  border-radius: 100%;
+  margin-right: 6px;
+  position: relative;
+  top: 8px;
+  height: 48px;
+}
+.tweet--timestamp {
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 10px;
+  text-align: right;
+  width: 100%;
+  display: inline-block;
+}
+.tweet--stats {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.tweet--favorites {
+  margin-right: 20px;
+}
+.tweet--favorites svg {
+  color: #e7a33a !important;
+  position: relative;
+  top: 6px;
+}
+.tweet--retweets svg {
+  color: #e7a33a !important;
+  position: relative;
+  top: 6px;
+}
+.tweet--media__photo {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.tweet--media__photo:hover {
+  cursor: pointer;
+}
+.tweet--media__photo span {
+  transition: all 0.25s ease-in-out;
+}
+.tweet--media__photo:hover span {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
 }

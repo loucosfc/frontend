@@ -2,8 +2,11 @@ import React from 'react';
 import Tweet from './components/Tweet';
 import _ from 'lodash';
 import Masonry from 'react-masonry-component';
+import packery from 'react-packery-component';
 
 import './stylesheet.css';
+
+const Packery = packery(React);
 
 class Tweets extends React.Component {
   getFormatted(tweets) {
@@ -13,11 +16,11 @@ class Tweets extends React.Component {
   render() {
     return (
       <div className="tweets">
-        <Masonry>
+        <Packery>
           {this.getFormatted(this.props.tweets).map((v, k) => {
-            return (<Tweet key={k} content={v} />);
+            return (<Tweet key={k} index={k} content={v} />);
           })}
-        </Masonry>
+        </Packery>
       </div>
     )
   }
