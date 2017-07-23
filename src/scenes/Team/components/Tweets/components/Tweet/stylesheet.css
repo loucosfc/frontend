@@ -1,28 +1,7 @@
 .tweet {
-  width: 25%;
+  width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-}
-.tweet--first {
-  width: 33.3%;
-  height: 400px;
-}
-.tweet--first .tweet--media__photo {
-  height: 200px;
-}
-.tweet--second {
-  width: 33.3%;
-  height: 400px;
-}
-.tweet--second .tweet--media__photo {
-  height: 200px;
-}
-.tweet--third {
-  width: 33.3%;
-  height: 400px;
-}
-.tweet--third .tweet--media__photo {
-  height: 200px;
 }
 .tweet > div {
   padding: 10px;
@@ -30,7 +9,7 @@
 .tweet--text {
   word-break: break-word;
   font-family: 'Titillium Web', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   font-weight: 300;
   color: #051931;
@@ -41,8 +20,9 @@
   font-weight: bold;
   color: #051931;
   font-family: 'Titillium Web', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 10px;
+  text-decoration: none;
   display: inline-block;
 }
 .tweet--profile-image {
@@ -80,8 +60,11 @@
 }
 .tweet--media__photo {
   position: relative;
+  display: inline-block;
   width: 100%;
   height: 250px;
+  margin-top: 10px;
+  border-radius: 6px;
   background-size: cover !important;
   background-position: center !important;
 }
@@ -90,12 +73,32 @@
 }
 .tweet--media__photo span {
   transition: all 0.25s ease-in-out;
+  border-radius: 6px;
+  text-align: center;
+  display: none;
+}
+.tweet--media__photo span svg {
+  fill: #FFF !important;
+  width: 100px !important;
+  height: 100px !important;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
 }
 .tweet--media__photo:hover span {
+  display: inline-block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.5);
+}
+
+@media only screen and (min-width : 768px) {
+  .tweet {
+    width: 33.3%;
+  }
 }

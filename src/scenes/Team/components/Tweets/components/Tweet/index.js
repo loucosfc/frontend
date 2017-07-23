@@ -4,6 +4,7 @@ import FavoriteIcon from 'material-ui/svg-icons/action/favorite-border';
 import RetweetIcon from 'material-ui/svg-icons/av/repeat';
 import { Card } from 'material-ui/Card';
 import AnimatedNumber from 'react-animated-number';
+import CameraIcon from 'material-ui/svg-icons/image/photo-camera';
 import 'moment/locale/pt-br';
 
 import './stylesheet.css';
@@ -78,14 +79,17 @@ class Tweet extends React.Component {
           {retweet.entities && retweet.entities.media && retweet.entities.media.length > 0 &&
           <div className="tweet--media">
             {retweet.entities.media[0].type === 'photo' &&
-              <div
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={retweet.entities.media[0].media_url}
                 className="tweet--media__photo"
                 style={{
                   background: `url(${retweet.entities.media[0].media_url})`,
                 }}
               >
-                <span></span>
-              </div>
+                <span><CameraIcon /></span>
+              </a>
             }
           </div>
           }
