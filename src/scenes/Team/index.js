@@ -14,7 +14,7 @@ class TeamScene extends React.Component {
 
   componentDidMount() {
     const teamSlug = this.props.match.params.teamSlug;
-    this.props.socket.emit('begin:stream', teamSlug);
+    this.props.socket.emit('watch:stream', teamSlug);
     this.props.socket.on('tweet', this.handleTweet);
   }
 
