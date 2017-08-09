@@ -21,9 +21,8 @@
     "react-tap-event-plugin": "^2.0.1",
     "react-transition-group": "^1.2.0",
     "socket.io-client": "^2.0.3",
-    "socket.io-react": "^1.2.0"
-  },
-  "devDependencies": {
+    "socket.io-react": "^1.2.0",
+    "dotenv": "4.0.0",
     "autoprefixer": "7.1.0",
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
@@ -34,7 +33,6 @@
     "case-sensitive-paths-webpack-plugin": "1.1.4",
     "chalk": "1.1.3",
     "css-loader": "0.28.1",
-    "dotenv": "4.0.0",
     "eslint": "3.19.0",
     "eslint-config-react-app": "^1.0.4",
     "eslint-loader": "1.7.1",
