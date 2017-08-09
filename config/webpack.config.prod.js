@@ -89,6 +89,8 @@ module.exports = {
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
       'components': path.resolve(paths.appSrc, 'components/'),
+      'services': path.resolve(paths.appSrc, 'services/'),
+      'scenes': path.resolve(paths.appSrc, 'scenes/'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
