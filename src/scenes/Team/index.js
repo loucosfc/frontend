@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, } from 'react-flexbox-grid';
 import { socketConnect } from 'socket.io-react';
 import Header from 'components/Header';
-import Tweets from './components/Tweets';
+import Tweets from 'containers/Tweets';
 import ButtonBack from './components/ButtonBack';
 import MaintenanceMode from './components/MaintenanceMode';
 import './stylesheet.css';
@@ -56,7 +56,7 @@ class TeamScene extends React.Component {
         <Header history={this.props.history} />
         <ButtonBack history={this.props.history} />
         <MaintenanceMode enabled={this.props.maintenanceMode} />
-        <Tweets tweets={this.state.tweets} />
+        <Tweets tweets2={this.state.tweets} />
       </Grid>
     )
   };

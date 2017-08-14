@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader'
+import { Provider } from 'react-redux';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import { AppContainer } from 'react-hot-loader';
 import registerServiceWorker from './registerServiceWorker';
 import App from './app';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import store from './store';
 
 injectTapEventPlugin();
 
 ReactDOM.render(
   <AppContainer>
-    <App/>
+    <Provider store={store}>
+      <App/>
+    </Provider>
   </AppContainer>,
   document.getElementById('root')
 );
