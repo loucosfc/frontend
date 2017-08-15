@@ -1,13 +1,16 @@
 import React from 'react';
-import Moment from 'react-moment';
+import moment from 'moment';
 import FavoriteIcon from 'material-ui/svg-icons/action/favorite-border';
 import RetweetIcon from 'material-ui/svg-icons/av/repeat';
 import { Card } from 'material-ui/Card';
 import AnimatedNumber from 'react-animated-number';
 import CameraIcon from 'material-ui/svg-icons/image/photo-camera';
-import 'moment/locale/pt-br';
-
+import TimeAgo from 'react-timeago';
+import frenchStrings from 'react-timeago/lib/language-strings/pt-br';
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
 import './stylesheet.css';
+ 
+const formatter = buildFormatter(frenchStrings);
 
 class Tweet extends React.Component {
   getClassNames() {
@@ -93,7 +96,7 @@ class Tweet extends React.Component {
             }
           </div>
           }
-          <Moment parse='dd MMM DD HH:mm:ss ZZ YYYY' fromNow locale="pt-br" className="tweet--timestamp">{retweet.created_at}</Moment>
+          <TimeAgo className="tweet--timestamp" date={moment(retweet.created_at, 'dd MMM DD HH:mm:ss ZZ YYYY', 'en')} formatter={formatter} />
         </Card>
       </div>
     )

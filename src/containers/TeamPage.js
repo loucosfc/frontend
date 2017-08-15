@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
-import { addTweet } from 'store/actions/tweets';
+import {
+  addTweet,
+  updateTweet,
+} from 'store/actions/tweets';
 import TeamScene from 'scenes/Team';
 
 const mapStateToProps = state => ({
@@ -8,6 +11,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addTweet: tweet => dispatch(addTweet(tweet)),
+  updateTweet: tweet => dispatch(updateTweet(tweet)),
 });
 
 const TeamPage = connect(
