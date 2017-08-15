@@ -1,10 +1,15 @@
 .tweet {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
 }
 .tweet > div {
   padding: 10px;
+}
+.tweet--card {
+  width: 100%;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  padding: 20px 20px 11.6px 20px;
 }
 .tweet--first .tweet--text,
 .tweet--second .tweet--text,
@@ -14,42 +19,56 @@
 }
 .tweet--text {
   word-break: break-word;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 20px;
   font-weight: 300;
-  color: #051931;
+  color: #1c2022;
   text-decoration: none;
   display: block;
 }
 .tweet--profile-link {
-  font-weight: bold;
-  color: #051931;
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 16px;
-  margin-bottom: 10px;
   text-decoration: none;
+}
+.tweet--names__name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1c2022;
+}
+.tweet--names__screen-name {
+  font-weight: 300;
+  color: #697882;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin-bottom: 10px;
   display: inline-block;
 }
 .tweet--profile-image {
   border-radius: 100%;
   margin-right: 6px;
-  position: relative;
-  top: 8px;
   height: 48px;
+  display: flex;
+}
+.tweet--names {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 .tweet--timestamp {
-  font-size: 14px;
-  font-style: italic;
+  font-size: 12px;
+  font-weight: 300;
+  opacity: 0.5;
   margin-top: 10px;
-  text-align: right;
   width: 100%;
   display: inline-block;
+  font-family: 'Roboto';
 }
 .tweet--stats {
   margin-top: 10px;
   font-size: 16px;
   font-weight: 500;
+  font-family: 'Roboto';
 }
 .tweet--favorites {
   margin-right: 20px;

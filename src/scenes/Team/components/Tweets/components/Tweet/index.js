@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment';
 import FavoriteIcon from 'material-ui/svg-icons/action/favorite-border';
 import RetweetIcon from 'material-ui/svg-icons/av/repeat';
-import { Card } from 'material-ui/Card';
 import AnimatedNumber from 'react-animated-number';
 import CameraIcon from 'material-ui/svg-icons/image/photo-camera';
 import TimeAgo from 'react-timeago';
@@ -25,16 +24,20 @@ class Tweet extends React.Component {
 
     return (
       <div className={this.getClassNames()}>
-        <Card>
+        <div className="tweet--card">
           <a className="tweet--profile-link" href={`https://twitter.com/${retweet.user.screen_name}`} rel="noopener noreferrer" target="_blank">
-            <img src={retweet.user.profile_image_url} alt="Twitter" className="tweet--profile-image" />
-            <span className="tweet--screen-name">
-              @{retweet.user.screen_name}
-            </span>
+            <div style={{display: 'flex'}}>
+              <img src={retweet.user.profile_image_url} alt="Twitter" className="tweet--profile-image" />
+              <div className="tweet--names">
+                <span className="tweet--names__name">{retweet.user.name}</span>
+                <span className="tweet--names__screen-name">@{retweet.user.screen_name}</span>
+              </div>
+            </div>
           </a>
           <a className="tweet--text" href={`https://twitter.com/${retweet.user.screen_name}/status/${retweet.id_str}`}>{retweet.text}</a>
+          <TimeAgo className="tweet--timestamp" date={moment(retweet.created_at, 'dd MMM DD HH:mm:ss ZZ YYYY', 'en')} formatter={formatter} />
           <div className="tweet--stats">
-              <span className="tweet--favorites">
+              <span title={`${retweet.favorite_count} favoritos`} className="tweet--favorites">
                 <AnimatedNumber
                   value={parseInt(retweet.favorite_count, 10)}
                   style={{
@@ -50,7 +53,7 @@ class Tweet extends React.Component {
                 />
                 <FavoriteIcon />
               </span>
-              <span className="tweet--retweets">
+              <span title={`${retweet.retweet_count} RT's`} className="tweet--retweets">
                 <AnimatedNumber
                   value={parseInt(retweet.retweet_count, 10)}
                   style={{
@@ -84,8 +87,7 @@ class Tweet extends React.Component {
             }
           </div>
           }
-          <TimeAgo className="tweet--timestamp" date={moment(retweet.created_at, 'dd MMM DD HH:mm:ss ZZ YYYY', 'en')} formatter={formatter} />
-        </Card>
+        </div>
       </div>
     )
   }

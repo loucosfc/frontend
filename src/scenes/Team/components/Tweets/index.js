@@ -9,7 +9,7 @@ const Packery = packery(React);
 
 class Tweets extends React.Component {
   getFormatted(tweets) {
-    return _.orderBy(tweets, (e) => e.retweeted_status.favorite_count, ['desc']);
+    return _.orderBy(tweets, (e) => e.retweeted_status.favorite_count, ['desc']).slice(0, 12);
   }
 
   render() {

@@ -8,7 +8,6 @@ import MaintenanceMode from './components/MaintenanceMode';
 import './stylesheet.css';
 
 class TeamScene extends React.Component {
-  static limitTweets = 10;
 
   state = {
     tweets: [],
@@ -25,9 +24,7 @@ class TeamScene extends React.Component {
     if (tweetExists) {
       this.props.updateTweet(tweet);
     } else {
-      if (this.props.tweets.length < TeamScene.limitTweets) {
-        this.props.addTweet(tweet);
-      }
+      this.props.addTweet(tweet);
     }
   }
 
