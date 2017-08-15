@@ -3,6 +3,7 @@ import { addTweet } from 'store/actions/tweets';
 import TeamScene from 'scenes/Team';
 
 const mapStateToProps = state => ({
+  tweets: state.tweets,
 });
 
 const mapDispatchToProps = dispatch => ({

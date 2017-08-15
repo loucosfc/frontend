@@ -8,6 +8,8 @@ import MaintenanceMode from './components/MaintenanceMode';
 import './stylesheet.css';
 
 class TeamScene extends React.Component {
+  static limitTweets = 10;
+
   state = {
     tweets: [],
   };
@@ -19,30 +21,11 @@ class TeamScene extends React.Component {
   }
 
   handleTweet = (tweet) => {
-    const exists = !!this.state.tweets.find((v) => v.retweeted_status.id === tweet.retweeted_status.id);
-    if (exists) {
-      const count = {
-        favorites: tweet.retweeted_status.favorite_count,
-        retweets: tweet.retweeted_status.retweet_count
-      };
-      const tweets = this.state.tweets.map((v) => {
-        if (v.retweeted_status.id === tweet.retweeted_status.id) {
-          return {
-            ...v,
-            retweeted_status: {
-              ...v.retweeted_status,
-              favorite_count: count.favorites,
-              retweet_count: count.retweets,
-            },
-          };
-        }
-        return v;
-      });
-      this.setState({
-        tweets,
-      });
+    const tweetExists = !!this.props.tweets.find((v) => v.retweeted_status.id === tweet.retweeted_status.id);
+    if (tweetExists) {
+      this.props.updateTweet(tweet);
     } else {
-      if (this.state.tweets.length < 20) {
+      if (this.props.tweets.length < TeamScene.limitTweets) {
         this.props.addTweet(tweet);
       }
     }
