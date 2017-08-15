@@ -6,32 +6,20 @@ import { Card } from 'material-ui/Card';
 import AnimatedNumber from 'react-animated-number';
 import CameraIcon from 'material-ui/svg-icons/image/photo-camera';
 import TimeAgo from 'react-timeago';
-import frenchStrings from 'react-timeago/lib/language-strings/pt-br';
+import portugueseStrings from 'react-timeago/lib/language-strings/pt-br';
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
 import './stylesheet.css';
  
-const formatter = buildFormatter(frenchStrings);
+const formatter = buildFormatter(portugueseStrings);
 
 class Tweet extends React.Component {
   getClassNames() {
-    const classNames = ['tweet'];
-
-    switch(this.props.index) {
-      case 0:
-        classNames.push('tweet--first');
-      break;
-      case 1:
-        classNames.push('tweet--second');
-      break;
-      case 2:
-        classNames.push('tweet--third');
-      break;
-      default:
-      break;
-    }
-
-    return classNames.join(' ');
+    const featured = ['first', 'second', 'third'];
+    let className = ['tweet'];
+    className = this.props.index < 3 ? className.concat([`tweet--${featured[this.props.index]}`]) : className;
+    return className.join(' ');
   }
+
   render() {
     const retweet = this.props.content.retweeted_status;
 
@@ -66,7 +54,7 @@ class Tweet extends React.Component {
                 <AnimatedNumber
                   value={parseInt(retweet.retweet_count, 10)}
                   style={{
-                      transition: '1s ease-out',
+                      transition: '1.5s ease-out',
                       transitionProperty:
                           'background-color, color, opacity'
                   }}

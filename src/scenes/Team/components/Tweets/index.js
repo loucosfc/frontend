@@ -15,9 +15,9 @@ class Tweets extends React.Component {
   render() {
     return (
       <div className="tweets">
-        <Packery options={{percentPosition: true,}}>
+        <Packery options={{percentPosition: true,transitionDuration: 0}}>
           {this.getFormatted(this.props.tweets).map((v, k) => {
-            return (<Tweet key={k} index={k} content={v} />);
+            return (<Tweet key={v.retweeted_status.id_str} index={k} content={v} />);
           })}
         </Packery>
       </div>
