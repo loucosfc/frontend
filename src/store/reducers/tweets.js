@@ -3,7 +3,7 @@ const tweets = (state = [], action) => {
     case 'ADD_TWEET':
       return [
         ...state,
-        {...action.tweet}
+        action.tweet
       ]
     default:
       return state;

@@ -43,9 +43,7 @@ class TeamScene extends React.Component {
       });
     } else {
       if (this.state.tweets.length < 20) {
-        this.setState({
-          tweets: [tweet, ...this.state.tweets],
-        });
+        this.props.addTweet(tweet);
       }
     }
   }
@@ -56,7 +54,7 @@ class TeamScene extends React.Component {
         <Header history={this.props.history} />
         <ButtonBack history={this.props.history} />
         <MaintenanceMode enabled={this.props.maintenanceMode} />
-        <Tweets tweets2={this.state.tweets} />
+        <Tweets />
       </Grid>
     )
   };
