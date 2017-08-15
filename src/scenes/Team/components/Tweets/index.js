@@ -9,15 +9,15 @@ const Packery = packery(React);
 
 class Tweets extends React.Component {
   getFormatted(tweets) {
-    return _.orderBy(this.props.tweets, (e) => e.retweeted_status.favorite_count, ['desc']);
+    return _.orderBy(tweets, (e) => e.retweeted_status.favorite_count, ['desc']).slice(0, 12);
   }
 
   render() {
     return (
       <div className="tweets">
-        <Packery options={{percentPosition: true,}}>
+        <Packery options={{percentPosition: true,transitionDuration: 0}}>
           {this.getFormatted(this.props.tweets).map((v, k) => {
-            return (<Tweet key={k} index={k} content={v} />);
+            return (<Tweet key={v.retweeted_status.id_str} index={k} content={v} />);
           })}
         </Packery>
       </div>

@@ -7,7 +7,7 @@ import { SocketProvider } from 'socket.io-react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import HomeScene from './scenes/Home';
-import TeamScene from './scenes/Team';
+import TeamPage from 'containers/TeamPage';
 
 import webSocketService from './services/websocket';
 
@@ -45,7 +45,7 @@ class App extends React.Component {
           <MuiThemeProvider>
             <div className="app">
               <Route exact path="/" component={HomeScene}/>
-              <Route path="/:teamSlug" render={(props) => <TeamScene maintenanceMode={this.state.maintenanceMode} {...props} />} />
+              <Route path="/:teamSlug" render={(props) => <TeamPage maintenanceMode={this.state.maintenanceMode} {...props} />} />
             </div>
           </MuiThemeProvider>
         </SocketProvider>

@@ -2,12 +2,13 @@ import React from 'react';
 import { Grid, } from 'react-flexbox-grid';
 import { socketConnect } from 'socket.io-react';
 import Header from 'components/Header';
-import Tweets from './components/Tweets';
+import Tweets from 'containers/Tweets';
 import ButtonBack from './components/ButtonBack';
 import MaintenanceMode from './components/MaintenanceMode';
 import './stylesheet.css';
 
 class TeamScene extends React.Component {
+
   state = {
     tweets: [],
   };
@@ -19,34 +20,11 @@ class TeamScene extends React.Component {
   }
 
   handleTweet = (tweet) => {
-    const exists = !!this.state.tweets.find((v) => v.retweeted_status.id === tweet.retweeted_status.id);
-    if (exists) {
-      const count = {
-        favorites: tweet.retweeted_status.favorite_count,
-        retweets: tweet.retweeted_status.retweet_count
-      };
-      const tweets = this.state.tweets.map((v) => {
-        if (v.retweeted_status.id === tweet.retweeted_status.id) {
-          return {
-            ...v,
-            retweeted_status: {
-              ...v.retweeted_status,
-              favorite_count: count.favorites,
-              retweet_count: count.retweets,
-            },
-          };
-        }
-        return v;
-      });
-      this.setState({
-        tweets,
-      });
+    const tweetExists = !!this.props.tweets.find((v) => v.retweeted_status.id === tweet.retweeted_status.id);
+    if (tweetExists) {
+      this.props.updateTweet(tweet);
     } else {
-      if (this.state.tweets.length < 20) {
-        this.setState({
-          tweets: [tweet, ...this.state.tweets],
-        });
-      }
+      this.props.addTweet(tweet);
     }
   }
 
@@ -56,7 +34,7 @@ class TeamScene extends React.Component {
         <Header history={this.props.history} />
         <ButtonBack history={this.props.history} />
         <MaintenanceMode enabled={this.props.maintenanceMode} />
-        <Tweets tweets={this.state.tweets} />
+        <Tweets />
       </Grid>
     )
   };

@@ -1,9 +1,10 @@
 .team-picker .title {
   color: #051931;
-  font-size: 28px;
+  font-size: 26px;
+  font-weight: 300;
   text-transform: uppercase;
   text-align: center;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Roboto', sans-serif;
   letter-spacing: 2px;
   margin-bottom: 50px;
 }
