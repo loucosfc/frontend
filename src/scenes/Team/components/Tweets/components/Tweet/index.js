@@ -101,48 +101,10 @@ class Tweet extends React.Component {
               <RetweetIcon />
             </span>
           </div>
-          {retweet.entities &&
-            retweet.entities.media &&
-            retweet.entities.media.length > 0 &&
-            <div className="tweet--media">
-              <Media
-                entities={retweet.entities}
-                extendedEntities={retweet.extended_entities}
-              />
-              {retweet.entities.media[0].type === "photo" &&
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={retweet.entities.media[0].media_url}
-                  className="tweet--media__photo"
-                  style={{
-                    background: `url(${retweet.entities.media[0].media_url})`
-                  }}
-                >
-                  <span>
-                    <CameraIcon />
-                  </span>
-                </a>}
-              {retweet.extended_entities.media[0].type === "video" &&
-                <div>
-                  {retweet.extended_entities.media[0].expanded_url}
-                </div>}
-              {retweet.extended_entities.media[0].type === "animated_gif" &&
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={retweet.extended_entities.media[0].media_url}
-                  className="tweet--media__photo"
-                  style={{
-                    background: `url(${retweet.extended_entities.media[0]
-                      .media_url})`
-                  }}
-                >
-                  <span>
-                    <CameraIcon />
-                  </span>
-                </a>}
-            </div>}
+          <Media
+            entities={retweet.entities || {}}
+            extendedEntities={retweet.extended_entities || {}}
+          />
         </div>
       </div>
     );
