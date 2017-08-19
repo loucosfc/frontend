@@ -1,4 +1,6 @@
 import React from "react";
+import { Player } from "video-react";
+import HLSSource from "./components/HLSSource";
 
 export default class Media extends React.Component {
   state = {
@@ -28,11 +30,16 @@ export default class Media extends React.Component {
     if (extendedEntities.media && extendedEntities.media[0]) {
       hasMedia = true;
       hasPermalink = false;
-      mediaUrl =
-        (extendedEntities.media[0].video_info &&
-          extendedEntities.media[0].video_info.variants[0].url) ||
-        extendedEntities.media[0].media_url;
       type = extendedEntities.media[0].type;
+
+      if (type === "video") {
+        mediaUrl = extendedEntities.media[0].video_info.variants.find(
+          v => v.content_type === "video/mp4"
+        ).url;
+        console.log(mediaUrl);
+      } else {
+        mediaUrl = extendedEntities.media[0].media_url;
+      }
       contentType =
         (extendedEntities.media[0].video_info &&
           extendedEntities.media[0].video_info.variants[0].content_type) ||
@@ -68,12 +75,7 @@ export default class Media extends React.Component {
             {!this.state.hasPermalink &&
               <div>
                 {this.state.type === "video" &&
-                  <video width="100%" height={400} autoPlay loop muted>
-                    <source
-                      src={this.state.mediaUrl}
-                      type={this.state.contentType}
-                    />
-                  </video>}
+                  <Player src={this.state.mediaUrl} autoPlay loop muted />}
               </div>}
           </div>}
       </div>

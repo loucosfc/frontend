@@ -1467,6 +1467,10 @@ classie@eiriklv/classie:
   version "1.0.1"
   resolved "https://codeload.github.com/eiriklv/classie/tar.gz/da1d3019904433872a8656d3cd69fc41d69c477a"
 
+classnames@^2.2.3:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 clean-css@4.1.x:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.4.tgz#eec8811db27457e0078d8ca921fa81b72fa82bf4"
@@ -3077,6 +3081,10 @@ history@^4.5.1, history@^4.6.0:
     resolve-pathname "^2.0.0"
     value-equal "^0.2.0"
     warning "^3.0.0"
+
+hls.js@^0.7.11:
+  version "0.7.11"
+  resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-0.7.11.tgz#e8448be35a2435bad24b8b93d9e7f9c05659bb28"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -5396,10 +5404,6 @@ react-masonry-component@^5.0.7:
     masonry-layout "^4.2.0"
     prop-types "^15.5.8"
 
-react-moment@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.2.4.tgz#b27ec064b8d6c329660afa14af6dbb47ff0ef799"
-
 react-packery-component@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-packery-component/-/react-packery-component-1.0.2.tgz#1521221da49167cb3cedf47d5b552c33488180a9"
@@ -6615,6 +6619,14 @@ verror@1.3.6:
   resolved "https://registry.yarnpkg.com/verror/-/verror-1.3.6.tgz#cff5df12946d297d2baaefaa2689e25be01c005c"
   dependencies:
     extsprintf "1.0.2"
+
+video-react@^0.8.6:
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/video-react/-/video-react-0.8.6.tgz#e02baedba344264e857a7fd5fd6d17c70f12c490"
+  dependencies:
+    classnames "^2.2.3"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.5.8"
 
 vm-browserify@0.0.4:
   version "0.0.4"

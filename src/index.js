@@ -1,32 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import { AppContainer } from 'react-hot-loader';
-import registerServiceWorker from './registerServiceWorker';
-import App from './app';
-import store from './store';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import injectTapEventPlugin from "react-tap-event-plugin";
+import { AppContainer } from "react-hot-loader";
+import registerServiceWorker from "./registerServiceWorker";
+import App from "./app";
+import store from "./store";
+
+import "video-react/dist/video-react.css";
 
 injectTapEventPlugin();
 
 ReactDOM.render(
   <AppContainer>
     <Provider store={store}>
-      <App/>
+      <App />
     </Provider>
   </AppContainer>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept('./app', () => {
-    const NextApp = require('./app').default;
+  module.hot.accept("./app", () => {
+    const NextApp = require("./app").default;
     ReactDOM.render(
       <AppContainer>
-        <NextApp/>
+        <NextApp />
       </AppContainer>,
-      document.getElementById('root')
+      document.getElementById("root")
     );
   });
 }
