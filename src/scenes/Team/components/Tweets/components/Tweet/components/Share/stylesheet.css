@@ -1,0 +1,23 @@
+.tweet--share {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.tweet--share a {
+  display: flex;
+  margin-left: 6px;
+  margin-right: 6px;
+  position: relative;
+  top: -30px;
+}
+.tweet--share a img {
+  width: 70px;
+  height: 30px;
+  opacity: 0.2;
+}
+.tweet--share a:hover img {
+  opacity: 1;
+}
+.tweet:hover .tweet--share a img {
+  opacity: 1;
+}

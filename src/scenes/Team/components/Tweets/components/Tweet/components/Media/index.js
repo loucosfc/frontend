@@ -36,7 +36,6 @@ export default class Media extends React.Component {
         mediaUrl = extendedEntities.media[0].video_info.variants.find(
           v => v.content_type === "video/mp4"
         ).url;
-        console.log(mediaUrl);
       } else {
         mediaUrl = extendedEntities.media[0].media_url;
       }
@@ -45,8 +44,6 @@ export default class Media extends React.Component {
           extendedEntities.media[0].video_info.variants[0].content_type) ||
         "";
     }
-
-    console.log(mediaUrl);
 
     this.setState({
       hasMedia,

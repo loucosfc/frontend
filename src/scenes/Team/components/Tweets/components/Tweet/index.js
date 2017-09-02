@@ -8,6 +8,7 @@ import TimeAgo from "react-timeago";
 import portugueseStrings from "react-timeago/lib/language-strings/pt-br";
 import buildFormatter from "react-timeago/lib/formatters/buildFormatter";
 import Media from "./components/Media";
+import Share from "./components/Share";
 import "./stylesheet.css";
 
 const formatter = buildFormatter(portugueseStrings);
@@ -101,6 +102,7 @@ class Tweet extends React.Component {
               <RetweetIcon />
             </span>
           </div>
+          <Share tweet={retweet} />
           <Media
             entities={retweet.entities || {}}
             extendedEntities={retweet.extended_entities || {}}
