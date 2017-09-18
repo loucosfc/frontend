@@ -14,7 +14,6 @@ class Header extends React.Component {
       <div className="header">
         <Row className="header">
           <Col xs={12}>
-            <div className="abacate" />
             <img src={logo} className="logo" onTouchTap={() => this.handleLogoOnTouchTap()} alt="Loucos F.C." />
           </Col>
         </Row>
