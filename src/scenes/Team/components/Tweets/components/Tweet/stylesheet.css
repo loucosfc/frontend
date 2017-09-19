@@ -1,5 +1,6 @@
 .tweet {
   width: 100%;
+  overflow-y: visible;
   padding: 10px;
 }
 .tweet > div {

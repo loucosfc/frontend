@@ -8,6 +8,8 @@ import App from "./app";
 import store from "./store";
 
 import "video-react/dist/video-react.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 injectTapEventPlugin();
 

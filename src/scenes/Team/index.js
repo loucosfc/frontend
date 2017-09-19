@@ -3,9 +3,11 @@ import { Grid, } from 'react-flexbox-grid';
 import { socketConnect } from 'socket.io-react';
 import Header from 'components/Header';
 import Tweets from 'containers/Tweets';
+import CarouselTweets from 'containers/CarouselTweets';
 import ButtonBack from './components/ButtonBack';
 import MaintenanceMode from './components/MaintenanceMode';
 import './stylesheet.css';
+import { Desktop, Tablet, Mobile } from 'utils/responsive';
 
 class TeamScene extends React.Component {
 
@@ -32,9 +34,16 @@ class TeamScene extends React.Component {
     return (
       <Grid fluid className="team">
         <Header history={this.props.history} />
-        <ButtonBack history={this.props.history} />
         <MaintenanceMode enabled={this.props.maintenanceMode} />
-        <Tweets />
+        <Desktop>
+          <Tweets />
+        </Desktop>
+        <Tablet>
+          <p>Tablet</p>
+        </Tablet>
+        <Mobile>
+          <CarouselTweets />
+        </Mobile>
       </Grid>
     )
   };

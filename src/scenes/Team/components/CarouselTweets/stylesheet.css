@@ -1,0 +1,40 @@
+.slick-slider .carousel-item {
+  height: calc(100vh - 170px);
+  width: 100%;
+  text-align: center;
+}
+.slick-slider .tweet--share {
+  justify-content: center;
+}
+.slick-slider .tweet--share a {
+  top: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.slick-slider .tweet--share a img {
+  opacity: 1 !important;
+}
+.slick-slider .tweet--text {
+  font-size: 12px !important;
+  line-height: 15px !important;
+}
+.slick-slider .tweet--media > div {
+  height: 100px;
+  overflow: hidden;
+}
+.slick-slider .tweet--media > div > div {
+  height: 100px;
+  overflow: hidden;
+}
+.slick-slider .tweet--media__photo {
+  height: 100px;
+  background-size: auto 100% !important;
+  background-repeat: no-repeat !important;
+}
+.slick-slider .tweet {
+  height: 100%;
+}
+.slick-slider .tweet--card {
+  height: 100%;
+}

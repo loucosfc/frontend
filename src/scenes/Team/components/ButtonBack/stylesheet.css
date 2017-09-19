@@ -1,5 +1,9 @@
 .button-back {
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+}
+.button-back > div {
+  min-width: 50px !important;
 }
