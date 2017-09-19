@@ -42,7 +42,7 @@ class TeamScene extends React.Component {
           <p>Tablet</p>
         </Tablet>
         <Mobile>
-          <p>Mobile</p>
+          <CarouselTweets />
         </Mobile>
       </Grid>
     )
